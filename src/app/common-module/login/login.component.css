@@ -1,0 +1,24 @@
+.inputBox{
+    /* color: blue; */
+}
+.container{
+    color:black;
+   /* height: 100vh; */
+    min-width: 100vw;
+    min-height: 100vh;
+    /* font-size: 50px; */
+    display: flexbox;
+    
+   background-image: url("/assets/bg-image/loginBg.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+}  
+
+.card{
+    max-width: 25vw;
+    display: flexbox;
+    position: relative;
+    left: 36%;
+    top: 15rem;  
+
+}
