@@ -1,0 +1,17 @@
+.container{
+    position: absolute;
+    bottom: 25%;
+    left: 15%;
+   
+    
+}
+body{
+    background-image: url("/assets/bg-image/loginBg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* body{
+    background-image: url("/assets/bg-image/loginBg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
