@@ -1,14 +1,15 @@
 .container{
     position: absolute;
-    bottom: 25%;
+    bottom: 15%;
     left: 15%;
    
     
 }
-body{
-    background-image: url("/assets/bg-image/loginBg.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+.header{
+    color:greenyellow
+}
+.header:hover{
+    color: hotpink;
 }
 /* body{
     background-image: url("/assets/bg-image/loginBg.jpg");

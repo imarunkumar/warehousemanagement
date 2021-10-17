@@ -1,4 +1,7 @@
 <div class="container  justify-content-center align-items-center">
+    <h1 class="header">Warehouse Management</h1>
+    <br>
+
 <form #signupForm="ngForm" (ngSubmit)="signIn(signupForm)" class="was-validated">
     <div class="row">
         <div class="col-8">
@@ -74,8 +77,13 @@
         </div>
     </div>
     <button type="submit" class="btn btn-primary" >Submit</button>
-
+    &nbsp;
+    <button type="reset" class="btn btn-warning" >Reset</button>
+    &nbsp;
 </form>
+<br>
+
+<button [routerLink]="['/login']" routerLinkActive="router-link-active"  class="btn btn-primary" > Back to sign in</button>
 </div>
 <!-- <form #signupForm="ngForm" (ngSubmit)="registerUser(signupForm)">
     <label >Email</label>
