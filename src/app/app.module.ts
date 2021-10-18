@@ -15,6 +15,8 @@ import {
   PB_DIRECTION,
 } from "ngx-ui-loader";
 
+// import { StockModule } from './module/stock-module';
+
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   bgsColor: "red",
   bgsPosition: POSITION.bottomCenter,
@@ -34,7 +36,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     AppRoutingModule,
     CommonComponentModule,
     BrowserAnimationsModule,
-    NgxUiLoaderModule, // import NgxUiLoaderModule
+    NgxUiLoaderModule,
     NgxUiLoaderHttpModule,
     NgxUiLoaderRouterModule,
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),

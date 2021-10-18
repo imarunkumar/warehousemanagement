@@ -16,6 +16,14 @@ const routes: Routes = [{
 {
     path: 'signup',
     component: SignupComponent
+},
+{
+    path:'stockboard',
+    // children:[
+    // {
+    //     loadChildren:'../main/main.module#MainModule'
+    // }]
+    loadChildren:'../main/main.module#MainModule'
 }
 ]
 

@@ -9,20 +9,20 @@
         <div class="card-body">
            <div class="row">
             <div class="col-md-12">
-                <input class="form-control"  placeholder="UserName"type="text"/>
+                <input class="form-control" [(ngModel)]="username" placeholder="UserName"type="text"/>
             </div>
            </div>
            <br>
            <div class="row">
                <div  class="col-md-12">
-                   <input class="form-control" type="text" placeholder="Password"/><br>
+                   <input class="form-control" [(ngModel)]="password" type="password" placeholder="Password"/><br>
                </div>
            </div>
               
         </div> 
         <div class="card-footer"> 
             <div class="row">
-                    <button class="btn btn-outline-primary" type="button"   >Sign in</button>
+                    <button class="btn btn-outline-primary" type="button" (click)="signIn()"  >Sign in</button>
            </div>
             <br>
             <div class="row">
@@ -36,3 +36,5 @@
         </div>
       </div>
   </div>
+<!-- <router-outlet></router-outlet> -->
+

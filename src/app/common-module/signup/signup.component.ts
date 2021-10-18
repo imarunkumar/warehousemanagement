@@ -3,6 +3,7 @@ import { ToastrService } from 'ngx-toastr';
 import { NgForm } from '@angular/forms';
 import { LocalStorageServiceService } from 'src/app/service/local-storage-service.service';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -10,7 +11,7 @@ import { NgxUiLoaderService } from 'ngx-ui-loader';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  constructor(private toaster:ToastrService,private addUser:LocalStorageServiceService,private ngxLoader:NgxUiLoaderService) {
+  constructor(private toaster:ToastrService,private addUser:LocalStorageServiceService,private route:Router,private ngxLoader:NgxUiLoaderService) {
     document.body.style.backgroundImage ="url('/assets/bg-image/loginBg.jpg')";
    }
 
@@ -19,8 +20,8 @@ export class SignupComponent implements OnInit {
   }
 
   signIn(form: NgForm){
-    this.ngxLoader.start();
     if(form.form.status==="VALID"){
+      this.ngxLoader.start();
       console.log(this.addUser.getData('email'));
       
       if(this.addUser.getData(form.value['email'])){
@@ -28,6 +29,7 @@ export class SignupComponent implements OnInit {
       }else{
         this.addUser.setData(form.value['email'],JSON.stringify(form.value));
         this.toaster.success("Successfully Submitted.");
+        this.route.navigateByUrl('/login');
       }
     }else{
       this.toaster.error("Invalid form");
