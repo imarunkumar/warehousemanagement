@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   }
   signIn(){
   if(this.localStr.getData(this.username) ){
-    this.router.navigateByUrl('/stockboard')
+    this.router.navigateByUrl('/warehouse')
     this.toaster.success("Login successfully");
 
   }else{

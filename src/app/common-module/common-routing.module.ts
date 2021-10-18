@@ -18,7 +18,7 @@ const routes: Routes = [{
     component: SignupComponent
 },
 {
-    path:'stockboard',
+    path:'warehouse',
     // children:[
     // {
     //     loadChildren:'../main/main.module#MainModule'

@@ -12,11 +12,11 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
   constructor(private toaster:ToastrService,private addUser:LocalStorageServiceService,private route:Router,private ngxLoader:NgxUiLoaderService) {
-    document.body.style.backgroundImage ="url('/assets/bg-image/loginBg.jpg')";
+    
    }
 
   ngOnInit(): void {
-  
+    document.body.style.backgroundImage ="url('/assets/bg-image/loginBg.jpg')";
   }
 
   signIn(form: NgForm){
@@ -37,5 +37,10 @@ export class SignupComponent implements OnInit {
     }
     this.ngxLoader.stop();
   }
+ ngOnDestroy(): void {
+   //Called once, before the instance is destroyed.
+   //Add 'implements OnDestroy' to the class.
+   document.body.style.backgroundImage ="";
+ }
   
 }
