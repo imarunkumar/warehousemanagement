@@ -14,6 +14,7 @@ import {
   POSITION,
   PB_DIRECTION,
 } from "ngx-ui-loader";
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 // import { StockModule } from './module/stock-module';
 
@@ -33,6 +34,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   ],
   imports: [
     BrowserModule,
+    FontAwesomeModule,
     AppRoutingModule,
     CommonComponentModule,
     BrowserAnimationsModule,
