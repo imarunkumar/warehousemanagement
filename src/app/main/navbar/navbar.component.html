@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <div class="container-fluid">
         <i class="fa fa-connectdevelop fa-2x fa-inverse" aria-hidden="true"></i>&nbsp;
@@ -9,12 +10,13 @@
       <div class="collapse navbar-collapse" id="mynavbar">
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a class="nav-link active" href="javascript:void(0)">Stock Board</a>
+            <a class="nav-link" [routerLink]="['/warehouse']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" >Stock Board</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="javascript:void(0)">Stock Import</a>
+            <a class="nav-link" [routerLink]="['/warehouse/stockimport']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">Stock Import</a>
           </li>
           <!-- <li class="nav-item">
+            routerlink="/warehouse/stockboard"
             <a class="nav-link" href="javascript:void(0)">Link</a>
           </li> -->
         </ul>
@@ -31,3 +33,5 @@
       </div>
     </div>
   </nav>
+  <router-outlet></router-outlet>
+

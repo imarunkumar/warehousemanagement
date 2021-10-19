@@ -9,7 +9,7 @@ const routes: Routes = [{
   path:'',
   component:NavbarComponent,
   children:[{
-    path:'stock',
+    path:'',
     component:StockBoardComponent
   },
   {
