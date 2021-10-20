@@ -15,7 +15,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     CommonModule,
     RouterModule,
     FontAwesomeModule,
-    MainRoutingModule,
+    MainRoutingModule
 
   ]
 })

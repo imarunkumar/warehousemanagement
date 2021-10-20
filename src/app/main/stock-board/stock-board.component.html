@@ -1,5 +1,62 @@
+<!-- Header -->
+<div class="container-fluid shadow p-3 mb-5 bg-white rounded">
+    <h2 class="display-8">Stock Board</h2>
+</div>
+<!-- body -->
 <div class="container">
-    <div class="container heading">
-        <h1 >Stock Board</h1>
+    <ng-container *ngIf="isAddStock"> 
+        <div class="row">
+            <div class="col-2">
+                Stock ID
+            </div>
+            <div class="col-2">
+                Stock Name
+            </div>
+            <div class="col-2">
+                Location
+            </div>
+            <div class="col-2">
+               Avaliable
+            </div>
+            <div class="col-2">
+                Booked
+            </div>
+            <div class="col-2">
+                Price
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <input type="text" class="form-control" name="" id="stockId">
+            </div>
+            <div class="col-2">
+                <input type="text" class="form-control" name="" id="stockName">
+            </div>
+            <div class="col-2">
+                <input type="text" class="form-control" name="" id="location">
+            </div>
+            <div class="col-2">
+                <input type="number" class="form-control" name="" id="avaliable">
+            </div>
+            <div class="col-2">
+                <input type="number" class="form-control" name="" id="booked">
+            </div>
+            <div class="col-2">
+                <input type="number" class="form-control" name="" id="price">
+            </div>
+        </div>
+    </ng-container>
+</div>
+
+
+
+
+<!-- Footer -->
+<div class="fixed-bottom footer ">
+
+    <div class="d-flex justify-content-end">
+        <button type="button" class="btn btn-warning btn-lm" (click)="addStock()" *ngIf="!isAddStock"> Add Stock</button>
+        <button type="button" class="btn btn-danger btn-lm" (click)="addStock()" *ngIf="isAddStock"> Cancel</button> &nbsp;
+        <button type="button" class="btn btn-light btn-lm" (click)="addStock()" *ngIf="isAddStock" (click)="submitStock()" > Submit</button>
     </div>
 </div>
