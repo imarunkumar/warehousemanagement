@@ -63,7 +63,7 @@ export class StockBoardComponent implements OnInit {
   submitStock(){
     console.log("caled");
     
-    if (this.newStock['stockName']) {
+    if (this.newStock['stockName']&&this.newStock['location']&&this.newStock['avaliable']&&this.newStock['booked']&&this.newStock['price']) {
     this.data=[...this.data,this.newStock]
     console.log(this.data);
     console.log(this.newStock);
