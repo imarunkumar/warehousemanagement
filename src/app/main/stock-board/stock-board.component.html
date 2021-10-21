@@ -1,52 +1,14 @@
 <!-- Header -->
 <div class="container-fluid shadow p-3 mb-5 bg-white rounded">
-    <h2 class="display-8">Stock Board</h2>
+    <h2 class="display-8">Stock Board</h2> 
 </div>
-<!-- body -->
+
 <div class="container-fluid">
-    <ng-container *ngIf="isAddStock"> 
-        <div class="row">
-            <div class="col-2">
-                Stock ID
-            </div>
-            <div class="col-2">
-                Stock Name
-            </div>
-            <div class="col-2">
-                Location
-            </div>
-            <div class="col-2">
-               Avaliable
-            </div>
-            <div class="col-2">
-                Booked
-            </div>
-            <div class="col-2">
-                Price
-            </div>
+    <div class="d-flex justify-content-end">
+        <label class="btn btn-warning btn-lm">
+            Browse <input type="file"  (change)="onFileChange($event)" hidden>
+        </label>
         </div>
-        <div class="row">
-            <div class="col-2">
-                <input type="text" class="form-control" name="" id="stockId">
-            </div>
-            <div class="col-2">
-                <input type="text" class="form-control" name="" id="stockName">
-            </div>
-            <div class="col-2">
-                <input type="text" class="form-control" name="" id="location">
-            </div>
-            <div class="col-2">
-                <input type="number" class="form-control" name="" id="avaliable">
-            </div>
-            <div class="col-2">
-                <input type="number" class="form-control" name="" id="booked">
-            </div>
-            <div class="col-2 position-relative">
-                <input type="number" class="form-control " name="" id="price">
-            </div>
-        </div>
-        <br>
-    </ng-container>
     <table class="table table-success table-striped table-hover ">
 
             <thead>
@@ -57,35 +19,62 @@
                 <th scope="col">Avaliable</th>
                 <th scope="col">Booked</th>
                 <th scope="col">Price</th>
+                <th scope="col">
+                    Actions
+                </th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td>Thornton</td>
-                <td>Thornton</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry the Bird</td>
-                <td>Larry the Bird</td>
-                <td>@twitter</td>
-                <td>Thornton</td>
-                <td>Thornton</td>
 
-              </tr>
+            <ng-container *ngFor="let rowData of data; let rowIndex=index">
+                <tr>
+                    <th>
+                        {{rowIndex+1}}
+                    </th>
+                    <ng-container *ngFor="let colData of data; let colIndex=index">
+
+                        <td *ngIf="rowData[dataKey[colIndex]]">
+                            {{rowData[dataKey[colIndex]]}}
+                         </td> 
+                    </ng-container>
+                    
+                   
+                    <td > 
+                        <i class="fa fa-pencil px-md-1" aria-hidden="true"></i>
+                        <i class="fa fa-lock px-md-1" aria-hidden="true"></i>
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                    </td>
+                </tr>
+            </ng-container>
+            <!-- Adding stock -->
+              <ng-container *ngIf="isAddStock">
+                  <tr>
+                      <th>{{data.length+1}}</th>
+                     <td>
+                        <input type="text" class="form-control" [(ngModel)]="newStock['stockName']" name="" id="stockName">                   
+                     </td>
+                     <td>
+                        <input type="text" class="form-control" [(ngModel)]="newStock['location']" name="" id="location">
+                     </td>
+                     <td>
+                        <input type="number" class="form-control" [(ngModel)]="newStock['booked']" name="" id="booked">                   
+                   </td>
+                   <td>
+                    <input type="number" class="form-control" [(ngModel)]="newStock['avaliable']" name="" id="avaliable">
+                   </td>
+                   <td>
+                    <input type="number" class="form-control " [(ngModel)]="newStock['price']" name="" id="price">
+                   </td>
+                   <td>
+                       
+                   </td>
+                  </tr>
+              </ng-container>
+              
             </tbody>
+            <div *ngIf="willDownload">
+                <a id="download"> Download JSON File </a>
+            </div>
           </table>
 </div>
 
@@ -97,7 +86,13 @@
 
     <div class="d-flex justify-content-end">
         <button type="button" class="btn btn-warning btn-lm" (click)="addStock()" *ngIf="!isAddStock"> Add Stock</button>
-        <button type="button" class="btn btn-danger btn-lm" (click)="addStock()" *ngIf="isAddStock"> Cancel</button> &nbsp;
-        <button type="button" class="btn btn-light btn-lm" (click)="addStock()" *ngIf="isAddStock" (click)="submitStock()" > Submit</button>
+        
+        <ng-container *ngIf="isAddStock">
+
+            <button type="button" class="btn btn-danger btn-lm mx-2" (click)="addStock()"> Cancel</button> 
+    
+            <button type="button" class="btn btn-light btn-lm"  (click)="submitStock()"> Submit</button>
+        </ng-container>
+        
     </div>
 </div>

@@ -8,3 +8,6 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
+.btn{
+  border: 1px solid white;
+}
