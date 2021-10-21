@@ -12,7 +12,28 @@
    background-image: url("/assets/bg-image/loginBg.jpg");
    background-repeat: no-repeat;
    background-size: cover;
+   z-index: 23;
 }  
+h1,h2 {
+  font-weight: 200;
+  color: chartreuse;
+}
+b{
+    color: white;
+}
+h1 { font-size: 3.5em; }
+h1 {
+  color: #888;
+  font-size: 2em;
+  display: flexbox;
+  position: absolute;
+  left: 38%;
+  top: 10rem; 
+}
+
+.txt-rotate{
+    color: chartreuse;
+}
 
 .card{
     max-width: 25vw;
