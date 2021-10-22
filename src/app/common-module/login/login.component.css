@@ -1,15 +1,15 @@
-.inputBox{
+/* .inputBox{ */
     /* color: blue; */
-}
-.container{
-    color:black;
+/* } */
+/* .container{
+    color:black; */
    /* height: 100vh; */
-    min-width: 100vw;
-    min-height: 100vh;
+    /* min-width: 100vw;
+    min-height: 100vh; */
     /* font-size: 50px; */
-    display: flexbox;
+    /* display: flexbox; */
     
-   background-image: url("/assets/bg-image/loginBg.jpg");
+   /* background-image: url("/assets/bg-image/loginBg.jpg");
    background-repeat: no-repeat;
    background-size: cover;
    z-index: 23;
@@ -42,4 +42,25 @@ h1 {
     left: 36%;
     top: 15rem;  
 
+} */
+.backGround{
+    background-image: url("/assets/bg-image/loginBg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    height: 100%;
 }
+.txt-rotate{
+    color: chartreuse;
+}
+
+h1,h3{
+color: white;
+
+}
+.vertical-center {
+    min-height: 100%;
+    min-height: 100vh; 
+    display: flex;
+    align-items: center;
+  }
