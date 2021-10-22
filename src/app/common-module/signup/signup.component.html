@@ -1,97 +1,55 @@
-<div class="container  justify-content-center align-items-center">
-    <h1 class="header">Warehouse Management</h1>
-    <br>
+<div class="container">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-md-8 mx-2">
+            <h3 align="center" class="display-4" style="color: white;">
+                <b>Warehouse Management</b> 
+                </h3>
+            
+        </div>     
+    </div>
+    <div class="row justify-content-left align-items-left">
+        <div class="col-sm-4    ">
+            <h3 align="left" class="display-8" style="color: white;">
+                Signup
+                </h3>
+                <br>
+                <form #signupForm="ngForm" (ngSubmit)="signIn(signupForm)" class="was-validated">
+            <input type="text" class="form-control"  placeholder="First Name" name="firstName" id="firstName" ngModel required>
+            <br>
+            <input type="text" class="form-control" placeholder="last Name" name="lastName" id="LastName" ngModel>
+           <br>
+            <input type="email" class="form-control" placeholder="Email ID" name="email" id="email" ngModel required>
+               <br>
+               <select class="form-select" placeholder="Gender" name="gender" id="gender" ngModel required>
+                <option value="" selected disabled hidden>Gender</option>  
+                <option>Male</option>
+                   <option>Female</option>
 
-<form #signupForm="ngForm" (ngSubmit)="signIn(signupForm)" class="was-validated">
-    <div class="row">
-        <div class="col-8">
-            <div class="input-group mb-3">
-                <span class="input-group-text">Name</span>
-                <input type="text" class="form-control"  placeholder="First Name" name="firstName" id="firstName" ngModel required>
-                <input type="text" class="form-control" placeholder="last Name" name="lastName" id="LastName" ngModel>
-              </div>
-        </div>
-    </div>
+               </select>
+               <br>
+               <input type="date" class="form-control textbox-n" placeholder="Date of birth" type="text" onfocus="(this.type='date')" id="date" name="dob" id="dob" ngModel required>
+               <br>
+               <textarea class="form-control" id="comment" name="text" placeholder="Address" name="address" id="address" ngModel required></textarea>
+               <br>
+               <select class="form-select" placeholder="Gender" name="gender" id="gender" ngModel required>
+                <option value="" selected disabled hidden>Role</option>  
+                <option>Viewer</option>
+                   <option>Adder</option>
 
-    <div class="row">
-        <div class="col-4">
-            <div class="input-group mb-3">
-                <span class="input-group-text">Email ID</span>
-                <input type="email" class="form-control" placeholder="Email ID" name="email" id="email" ngModel required>
-               
-              </div>
+               </select>
+               <br>
+               <input class="form-check-input" type="checkbox" name="agree" id="agree" ngModel id="myCheck"  required>
+               <label class="form-check-label" for="myCheck">&nbsp;I agree on Warehousemanagement policy.</label>
+       <br><br>
+       <button [routerLink]="['/login']" routerLinkActive="router-link-active"  class="btn btn-primary" > Back to sign in</button>
+       &nbsp;
+       <button type="reset" class="btn btn-warning" >Reset</button>
+       &nbsp;
+       <button type="submit" class="btn btn-primary" >Submit</button>
+       
+       
+            </form>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-4">
-            <div class="input-group mb-3">
-                <span class="input-group-text">Gender</span>
-                <select class="form-select" name="gender" id="gender" ngModel required>
-                    <option>Male</option>
-                    <option>Female</option>
 
-                </select>
-               
-              </div>
-        </div>
     </div>
-    <div class="row">
-        <div class="col-4">
-            <div class="input-group mb-3">
-                <span class="input-group-text">Date of Birth</span>
-                <input type="date" class="form-control" placeholder="DOB" name="dob" id="dob" ngModel required>
-               
-              </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-5">
-            <div class="form-floating">
-                <textarea class="form-control" id="comment" name="text" placeholder="Address" name="address" id="address" ngModel required></textarea>
-                <label for="comment">Add your Address</label>
-              </div>
-        </div>
-    </div>
-    <br>
-
-    <div class="row">
-        <div class="col-4">
-            <div class="input-group mb-3">
-                <span class="input-group-text">Role</span>
-                <select class="form-select" name="role" id="role" ngModel required>
-                    <option>Viewer</option>
-                    <option>Adder</option>
-
-                </select>
-               
-              </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-4">
-            <div class="form-check mb-3">
-                <input class="form-check-input" type="checkbox" name="agree" id="agree" ngModel id="myCheck"  required>
-                <label class="form-check-label" for="myCheck">I agree on Warehousemanagement policy.</label>
-                <div class="invalid-feedback">Check this checkbox to continue.</div>
-              </div>
-        </div>
-    </div>
-    <button type="submit" class="btn btn-primary" >Submit</button>
-    &nbsp;
-    <button type="reset" class="btn btn-warning" >Reset</button>
-    &nbsp;
-</form>
-<br>
-
-<button [routerLink]="['/login']" routerLinkActive="router-link-active"  class="btn btn-primary" > Back to sign in</button>
 </div>
-<!-- <form #signupForm="ngForm" (ngSubmit)="registerUser(signupForm)">
-    <label >Email</label>
-    <input type="text" name="email" id="email" ngModel>
-  
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password" ngModel>
-  
-    <button type="submit">Sign Up</button>
-  </form> -->
-  

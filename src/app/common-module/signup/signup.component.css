@@ -1,15 +1,19 @@
-.container{
+/* .container{
     position: absolute;
     bottom: 15%;
     left: 15%;
    
     
-}
+} */
 .header{
     color:greenyellow
 }
 .header:hover{
     color: hotpink;
+}
+.row{
+    
+    overflow: hidden;
 }
 /* body{
     background-image: url("/assets/bg-image/loginBg.jpg");
