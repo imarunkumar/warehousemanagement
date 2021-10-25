@@ -134,8 +134,10 @@ export class StockBoardComponent implements OnInit {
   }
 
   deleteStock(index){
-    this.data.splice(index,1)
+   this.data.splice(index,1)
+  //  let temp= this.data;
+  //  delete this.data[index]
+  //  this.data.pop();
     console.log(this.data);
-    
   }
 }

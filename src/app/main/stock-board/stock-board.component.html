@@ -3,6 +3,8 @@
     <h2 class="display-8">Stock Board</h2> 
 </div>
 
+
+
 <div class="container-fluid ">
     <div class="d-flex justify-content-end">
         <label class="btn btn-warning btn-lm">
@@ -25,14 +27,13 @@
               </tr>
             </thead>
             <tbody class="overflow-auto">
-
+                <ng-container *ngIf="data.length!==0; else elseTemplate">
             <ng-container *ngFor="let rowData of data; let rowIndex=index">
                 <tr>
                     <th>
                         {{rowIndex+1}}
                     </th>
-                    <ng-container *ngFor="let colData of data; let colIndex=index">
-                        
+                    <ng-container *ngFor="let colData of dataKey; let colIndex=index">
                         <td *ngIf="rowData[dataKey[colIndex]]">
                             <ng-container *ngIf="dataKey[colIndex]!=='price'" >
                                 <input id="{{rowIndex}}+_+{{colIndex}}" [disabled]="!(editIndex==rowIndex)" class="form-control" [(ngModel)]="rowData[dataKey[colIndex]]" />
@@ -40,22 +41,25 @@
                             <ng-container *ngIf="dataKey[colIndex]==='price'">
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">$</span>
-                                    <input id="{{rowIndex}}+_+{{colIndex}}"  [disabled]="!(editIndex==rowIndex)" type="text" class="form-control" aria-label="Amount (to the nearest dollar)" [(ngModel)]="rowData[dataKey[colIndex]]">
+                                    <input id="{{rowIndex}}+_+{{colIndex}}" type="number"  [disabled]="!(editIndex==rowIndex)"  class="form-control" aria-label="Amount (to the nearest dollar)" [(ngModel)]="rowData[dataKey[colIndex]]">
                                   </div>
                             </ng-container>
-                            
                         </td> 
-                    </ng-container>
-                    
-                   
+                      
+                    </ng-container> 
                     <td > 
                         <i class="fa fa-pencil px-md-1" aria-hidden="true" (click)="editStock(rowIndex)"></i>
                         <i class="fa fa-lock px-md-1" aria-hidden="true"  ></i>
                         <i class="fa fa-trash" aria-hidden="true" (click)="deleteStock(rowIndex)"></i>
                     </td>
+                    <!-- {{rowData|json}} -->
                 </tr>
             </ng-container>
-            <!-- Adding stock -->
+           
+                
+            </ng-container>
+            
+            
               <ng-container *ngIf="isAddStock">
                   <tr>
                       <th>{{data.length+1}}</th>
@@ -84,7 +88,15 @@
             <div *ngIf="willDownload">
                 <a id="download"> Download JSON File </a>
             </div>
+            
           </table>
+          <ng-template #elseTemplate>
+            <tr>
+             
+                <td colspan="12" class="table-active" style="color: red;" align="center">No Records found</td>
+              
+              </tr>
+        </ng-template>
 </div>
 
 
