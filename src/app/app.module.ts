@@ -15,6 +15,7 @@ import {
   PB_DIRECTION,
 } from "ngx-ui-loader";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HttpClientModule } from '@angular/common/http';
 
 // import { StockModule } from './module/stock-module';
 
@@ -41,6 +42,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     NgxUiLoaderModule,
     NgxUiLoaderHttpModule,
     NgxUiLoaderRouterModule,
+    HttpClientModule,
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
     ToastrModule.forRoot()
   ],

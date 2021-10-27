@@ -15,6 +15,7 @@
 
             <thead>
               <tr>
+                <th class="header" scope="col">S.no</th>
                 <th class="header" scope="col">Stock ID</th>
                 <th class="header"scope="col">Stock Name</th>
                 <th class="header" scope="col">Location</th>
@@ -35,8 +36,11 @@
                     </th>
                     <ng-container *ngFor="let colData of dataKey; let colIndex=index">
                         <td *ngIf="rowData[dataKey[colIndex]]">
-                            <ng-container *ngIf="dataKey[colIndex]!=='price'" >
-                                <input id="{{rowIndex}}+_+{{colIndex}}" [disabled]="!(editIndex==rowIndex)" class="form-control" [(ngModel)]="rowData[dataKey[colIndex]]" />
+                            <ng-container *ngIf="dataKey[colIndex]!=='price'&& dataKey[colIndex]!=='avaliable'&& dataKey[colIndex]!=='booked'" >
+                                <input id="{{rowIndex}}+_+{{colIndex}}" [disabled]="!(editIndex==rowIndex) || dataKey[colIndex]=='stockId'" class="form-control" [(ngModel)]="rowData[dataKey[colIndex]]" />
+                            </ng-container>
+                            <ng-container *ngIf="dataKey[colIndex]=='avaliable'||dataKey[colIndex]=='booked'" >
+                                <input id="{{rowIndex}}+_+{{colIndex}}" type="number" [disabled]="!(editIndex==rowIndex) || dataKey[colIndex]=='stockId'" class="form-control" [(ngModel)]="rowData[dataKey[colIndex]]" />
                             </ng-container>
                             <ng-container *ngIf="dataKey[colIndex]==='price'">
                                 <div class="input-group mb-3">
